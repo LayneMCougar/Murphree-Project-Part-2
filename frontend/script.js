@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // eslint-disable-next-line no-unused-expressions
           answer.offsetHeight;
           answer.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
         }
       }
     });
