@@ -165,3 +165,61 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* ===== FAQ Accordion ===== */
+
+.faq-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.faq-item {
+  background-color: #fff;
+  border: 1px solid #ddd;          /* outlined look */
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;                 /* clip the animated area */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: #f2f2f2;
+  border: none;
+  padding: 14px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* space for chevron */
+}
+
+.faq-question:hover {
+  background: #e8e8e8;
+}
+
+/* Optional chevron indicator */
+.faq-question::after {
+  content: "▾";
+  transition: transform 0.2s ease;
+}
+
+.faq-question[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 16px;                  /* no top/bottom padding when closed */
+  max-height: 0;                    /* collapsed by default (JS will also use hidden) */
+  overflow: hidden;
+  transition: max-height 0.25s ease, padding 0.25s ease;
+}
+
+.faq-answer.open {
+  padding: 12px 16px;               /* add padding when opened */
+  /* Use a large max-height to allow room for content; it will animate smoothly */
+  max-height: 500px;
+}
