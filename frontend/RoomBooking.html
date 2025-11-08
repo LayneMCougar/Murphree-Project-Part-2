@@ -27,7 +27,37 @@
         </nav>
     </header>
 
-    
+    <!--Main content; form ; create classes and add style info to the CSS file to keep HTML file streamlined-->
+    <main>
+        <h1>Request a Room</h1>
+
+        <!--Room Booking Form-->
+        <form id="roomBookingForm" class="booking-form">
+            <!--Full Name Field(required)-->
+            <label for="name">Full Name:<span class="required">*</span></label>
+            <input type="text" id="name" name="name" class="form-input" required />
+            <!--Email Field(required)-->
+            <label for="email">Email:<span class="reuired">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" required />
+            <!--studentID Field(required)-->
+            <label for="studentID">Student ID:<span class="required">*</span></label>
+            <input type="text" id="studentID" name="studentID" class="form-input" required />
+            <!--Date Field(required)-->
+            <label for="date">Requested Date:<span class="required">*</span></label>
+            <input type="date" id="date" name="date" class="form-input" required />
+            <!--Time Field(required)-->
+            <label for="time">Requested Time:<span class="required">*</span></label>
+            <input type="time" id="time" name="time" class="form-input" required />
+            <!--Student Organization(optional)-->
+            <label for="organization">Student Organization (optional):</label>
+            <input type="text" id="organization" name="organization" class="form-input" />
+            <!--Message/Reason-->
+            <label for="message">Reason for Booking (200 words max):</label>
+            <textarea id="message" name="message" maxlength="200" rows="6"></textarea>
+            <!--Submit Button-->
+            <button type="submit" class="submit-button">Submit Request</button>
+        </form>
+    </main>
 
 </body>
 </html>
