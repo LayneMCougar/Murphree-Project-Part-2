@@ -152,3 +152,16 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
+
+/* ==============================
+   Footer
+============================== */
+footer {
+    background-color: #c8102e;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
