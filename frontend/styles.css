@@ -1,50 +1,58 @@
-/*Global Page Formatting*/
+/* ==============================
+   Global Styles
+============================== */
+
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* UH brand colors */
-:root {
-    --uh-red: #c8102e;
-    --uh-dark: #2e2e2e;
-    --uh-light: #ffffff;
-}
+/* ==============================
+   Header / Nav
+============================== */
 
-/*Header / Navigation*/
 header {
-    background-color: var(--uh-red);
-    padding: 0.8rem 1rem;
+    background-color: #c8102e; /* UH Red */
+    padding: 15px 0;
     color: white;
 }
 
 .navbar {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Logo */
 .logo img {
     height: 50px;
 }
 
-/* Nav link list */
+.site-title {
+    font-size: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin: 0;
-    padding: 0;
+    gap: 10px;
 }
 
-/* Text links */
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links a {
-    color: white;
     text-decoration: none;
+    color: white;
     font-weight: bold;
 }
 
@@ -52,159 +60,95 @@ header {
     color: white;
 }
 
-/*Hero Section*/
-.hero {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-}
+/* ==============================
+   Main Layout
+============================== */
 
-.hero-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    text-shadow: 2px 2px 6px black;
-}
-
-/*About Page*/
-.about-main {
-    padding: 2rem;
-}
-
-.about-section {
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.about-images {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.about-images img {
-    width: 30%;
-    border-radius: 8px;
-}
-
-/*FAQ Page Dropdown*/
-.faq-container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.faq-item {
-    background-color: var(--uh-light);
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-}
-
-.faq-question {
-    width: 100%;
-    text-align: left;
-    background-color: var(--uh-red);
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 1rem;
-    transition: max-height 0.4s ease-out;
-    background-color: #ffffff;
-}
-
-.faq-answer.open {
-    max-height: 200px;
-    padding: 1rem;
-}
-
-/*Room Booking Form*/
-
-/* Center main content */
 main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* ==============================
+   Booking Form Styling
+============================== */
+
+.booking-form {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 18px;
 }
 
-/* Center heading above form */
-main h1 {
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: var(--uh-red);
-}
-
-/* Form container */
-.booking-form {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background-color: var(--uh-light);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
-
-/* Input fields */
-.form-input,
-textarea {
-    width: 100%;
-    padding: 0.6rem;
-    margin-bottom: 1rem;
-    border: 1px solid #aaa;
-    border-radius: 6px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-/* Required star color */
-.required {
-    color: var(--uh-red);
-}
-
-/* Submit button */
-.submit-button {
-    background-color: var(--uh-red);
-    color: white;
-    border: none;
-    padding: 0.8rem 1rem;
-    font-size: 1rem;
+.booking-form label {
     font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.required {
+    color: red;
+    margin-left: 3px;
+}
+
+.form-input {
     width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fafafa;
+}
+
+.form-input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #c8102e;
+    background-color: #fff;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fafafa;
+}
+
+/* ==============================
+   Button
+============================== */
+
+.submit-button {
+    background-color: #c8102e;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 .submit-button:hover {
-    background-color: #a00d24;
+    background-color: #a30c23;
 }
 
-/*Footer*/
-footer {
-    background-color: var(--uh-dark);
-    color: white;
-    padding: 1rem;
+/* ==============================
+   Page Title
+============================== */
+
+h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
