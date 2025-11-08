@@ -1,80 +1,210 @@
-/* styles.css */
-
-/* General Styles */
+/*Global Page Formatting*/
 body {
-    font-family: Arial, sans-serif; /* Standard Sans Serif font */
     margin: 0;
-    padding: 0;
-    background-color: #f9f9f9; /* Light background for readability */
-    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
 }
 
-/* Primary and Secondary Colors */
+/* UH brand colors */
 :root {
-    --primary-red: #c8102e; /* UH Red */
-    --primary-white: #ffffff;
-    --secondary-black: #000000;
-    --secondary-lightgray: #f2f2f2;
+    --uh-red: #c8102e;
+    --uh-dark: #2e2e2e;
+    --uh-light: #ffffff;
 }
 
-/* Header Styles */
+/*Header / Navigation*/
 header {
-    background-color: var(--primary-white);
-    padding: 10px 20px;
-    border-bottom: 2px solid var(--secondary-lightgray);
+    background-color: var(--uh-red);
+    padding: 0.8rem 1rem;
+    color: white;
 }
 
 .navbar {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
+/* Logo */
 .logo img {
     height: 50px;
 }
 
-.site-title {
-    font-size: 1.5rem;
-    margin-left: 15px;
-    flex-grow: 1;
-    color: var(--secondary-black);
-}
-
+/* Nav link list */
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
-    padding: 0;
+    gap: 0.75rem;
     margin: 0;
+    padding: 0;
 }
 
-.nav-links li {
-    margin: 0 5px;
-}
-
+/* Text links */
 .nav-links a {
+    color: white;
     text-decoration: none;
-    color: var(--primary-red);
     font-weight: bold;
-    padding: 5px 10px;
-}
-
-.nav-links a:hover {
-    background-color: var(--primary-red);
-    color: var(--primary-white);
-    border-radius: 5px;
 }
 
 .nav-links span {
-    color: var(--secondary-black);
+    color: white;
 }
 
-/* Footer Styles */
-footer {
-    background-color: var(--secondary-black);
-    color: var(--primary-white);
+/*Hero Section*/
+.hero {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
+    text-shadow: 2px 2px 6px black;
+}
+
+/*About Page*/
+.about-main {
+    padding: 2rem;
+}
+
+.about-section {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.about-images {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.about-images img {
+    width: 30%;
+    border-radius: 8px;
+}
+
+/*FAQ Page Dropdown*/
+.faq-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.faq-item {
+    background-color: var(--uh-light);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background-color: var(--uh-red);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    transition: max-height 0.4s ease-out;
+    background-color: #ffffff;
+}
+
+.faq-answer.open {
+    max-height: 200px;
+    padding: 1rem;
+}
+
+/*Room Booking Form*/
+
+/* Center main content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Center heading above form */
+main h1 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--uh-red);
+}
+
+/* Form container */
+.booking-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: var(--uh-light);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Input fields */
+.form-input,
+textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Required star color */
+.required {
+    color: var(--uh-red);
+}
+
+/* Submit button */
+.submit-button {
+    background-color: var(--uh-red);
+    color: white;
+    border: none;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #a00d24;
+}
+
+/*Footer*/
+footer {
+    background-color: var(--uh-dark);
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
