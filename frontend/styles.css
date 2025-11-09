@@ -64,16 +64,19 @@ header {
     text-shadow: 3px 2px 2px rgba(0,0,0,0.3); /* subtle shadow for contrast */
 }
 
+/* ===== Navigation Bar (wrap/spacing fix) ===== */
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: nowrap;        /* prevent items from stacking */
 }
 
 .nav-links li {
     display: flex;
     align-items: center;
+    white-space: nowrap;      /* keep multi-word links on one line */
 }
 
 .nav-links a {
@@ -84,6 +87,7 @@ header {
 
 .nav-links span {
     color: white;
+    margin: 0 6px;            /* even spacing around separators */
 }
 
 /* ==============================
@@ -307,5 +311,6 @@ footer {
     font-size: 1.05rem;
     line-height: 1.6;
 }
+
 
 
