@@ -28,14 +28,22 @@ header {
     margin: 0 auto;
 }
 
+/* Updated logo styling */
 .logo img {
-    height: 50px;
+    height: 80px;        /* increased size for visibility */
+    width: auto;
 }
 
+/* Updated site title styling */
 .site-title {
-    font-size: 1.5rem;
+    font-size: 2rem;     /* larger and bolder */
+    font-weight: 700;
+    text-transform: uppercase;
     text-align: center;
     flex-grow: 1;
+    margin-left: 15px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* subtle shadow for contrast */
 }
 
 .nav-links {
@@ -156,6 +164,7 @@ h1 {
 /* ==============================
    Footer
 ============================== */
+
 footer {
     background-color: #c8102e;
     color: white;
@@ -223,3 +232,4 @@ footer {
   /* Use a large max-height to allow room for content; it will animate smoothly */
   max-height: 500px;
 }
+
