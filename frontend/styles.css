@@ -2,12 +2,22 @@
    Global Styles
 ============================== */
 
+html, body {
+    height: 100%; /* make page take full viewport height */
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    display: flex;
+    flex-direction: column; /* allow footer to stay at bottom */
+}
+
+main {
+    flex: 1; /* push footer down when content is short */
 }
 
 /* ==============================
@@ -173,9 +183,8 @@ footer {
     color: white;
     text-align: center;
     padding: 15px 0;
-    position: relative;
-    bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* thin dark line above footer */
 }
 
 /* ===== FAQ Accordion ===== */
@@ -264,3 +273,4 @@ footer {
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
+
