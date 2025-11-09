@@ -22,28 +22,31 @@ header {
 
 .navbar {
     display: flex;
-    align-items: center;
+    align-items: center;   /* vertically centers logo & title */
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Updated logo styling */
 .logo img {
-    height: 80px;        /* increased size for visibility */
-    width: auto;
+    height: 90px;          /* increased to match header height */
+    width: auto;           /* keeps proportional */
+    display: block;
+    margin-left: 0;        /* ensure it’s flush left */
 }
 
 /* Updated site title styling */
 .site-title {
-    font-size: 1.80rem;     /* make slightly smaller */
+    font-size: 2rem;     /* make slightly smaller */
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     flex-grow: 1;
     margin-left: 12px;
-    letter-spacing: .8px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* subtle shadow for contrast */
+    letter-spacing: .9px;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.3); /* subtle shadow for contrast */
 }
 
 .nav-links {
