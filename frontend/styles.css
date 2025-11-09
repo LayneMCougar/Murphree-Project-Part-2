@@ -236,3 +236,31 @@ footer {
   max-height: 500px;
 }
 
+/* ==============================
+   Hero Section (Home Page)
+============================== */
+
+.hero {
+    position: relative;
+    width: 100vw;                   /* full viewport width */
+    margin-left: 50%;
+    transform: translateX(-50%);    /* ensures full edge-to-edge width */
+    overflow: hidden;
+}
+
+.hero-media img {
+    width: 100vw;                   /* stretches image full width */
+    height: auto;
+    display: block;
+    object-fit: cover;              /* keeps proportions and prevents squishing */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}

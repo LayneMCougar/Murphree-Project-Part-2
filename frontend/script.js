@@ -72,3 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Contact form submission alert
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevents page reload
+      alert('Thank you for contacting us! Your message has been submitted successfully.');
+      contactForm.reset(); // Clears the form after submission
+    });
+  }
+});
+
