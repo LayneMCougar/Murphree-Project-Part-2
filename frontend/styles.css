@@ -120,13 +120,15 @@ header {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 30px 40px;
+    padding: 40px 50px;
     box-shadow: 0 0 12px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
     gap: 18px;
-    max-width: 700px;
-    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
+    min-width: 800px;
+    margin: 40px auto;
 }
 
 /* Consistent spacing between all form fields */
@@ -136,19 +138,35 @@ header {
     margin-bottom: 16px;
 }
 
-/* ✅ Uniform input field styling */
+/* Compact single-line inputs and dropdowns */
 .booking-form input.form-input,
-.booking-form select.form-input,
-.booking-form textarea {
+.booking-form select.form-input {
+    display: block;
     width: 100%;
+    max-width: none;
     box-sizing: border-box;
-    padding: 12px 14px;
+    padding: 10px 12px;  /* smaller for compact height */
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 1rem;
     background-color: #fafafa;
 }
 
+/* Larger box only for multi-line textarea */
+.booking-form textarea {
+    display: block;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fafafa;
+    height: 150px;  /* large area for multiple sentences */
+}
+
+/* Focus effect */
 .booking-form input.form-input:focus,
 .booking-form select.form-input:focus,
 .booking-form textarea:focus {
@@ -437,6 +455,7 @@ footer {
         text-align: center;
     }
 }
+
 
 
 
