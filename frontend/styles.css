@@ -101,14 +101,14 @@ header {
 /* ===== Welcome Text Section (Home Page) ===== */
 .welcome-text {
     background-color: #ffffff;
-    padding: 30px 20px;
+    padding: 50px 30px; /* increased padding for more vertical height */
     text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 1000px; /* slightly wider for visual balance */
+    margin: 30px auto 40px; /* reduced bottom margin to tighten gap */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 /* ==============================
@@ -404,4 +404,111 @@ footer {
 
 main {
     flex: 1; /* pushes footer down when content is short */
+}
+
+/* ==============================
+   About Page - Mission Box Styling
+============================== */
+
+.mission-section {
+    margin: 40px 0;
+}
+
+.mission-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1.5px solid #b3b3b3;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    gap: 20px;
+}
+
+.mission-text {
+    flex: 1;
+}
+
+.mission-text h2 {
+    color: #c8102e;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.mission-text p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.mission-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.mission-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* ==============================
+   About Page - Community Box Styling
+============================== */
+
+.community-section {
+    margin: 40px 0;
+}
+
+.community-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1.5px solid #b3b3b3;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    gap: 20px;
+}
+
+.community-text {
+    flex: 1;
+}
+
+.community-text h2 {
+    color: #c8102e;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.community-text p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.community-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.community-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Responsive layout: stack image above text on smaller screens */
+@media (max-width: 768px) {
+    .mission-box,
+    .community-box {
+        flex-direction: column;
+        text-align: center;
+    }
 }
