@@ -84,3 +84,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Room booking Availability checker ; check specific date/time and see if room is available
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('roomBookingForm');
+
+  //Sample already booked room/ blocked out for the entire day on Nov 10, 2025
+  const unavailableRooms = [{room: "eventHall", date: "2025-11-10", time: "ALL_DAY"}];
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const room = document.getElementById('room').value.trim();
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+
+    // Ensure valid inputs
+    if (!room || !date || !time) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // Check availability for date
+    const isBlocked = unavailableRooms.some(
+      (booking) =>
+        booking.room === room &&
+        booking.date === date &&
+        booking.time === "ALL_DAY"
+    );
+
+    if (isBlocked) {
+      alert(`Sorry, ${room} is unavailable on ${date}. Please choose another date or room.`);
+      return;
+    }
+
+    //If room available give message
+    alert('Booking request submitted for ${room} on ${date} at ${time}.');
+    form.reset();
+  });
+});
