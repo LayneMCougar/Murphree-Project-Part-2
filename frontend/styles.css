@@ -512,3 +512,35 @@ main {
         text-align: center;
     }
 }
+
+/*Add white background to About Page Header */
+
+.about-section {
+    background-color: #ffffff;
+    width: 100vw; /* spans full width of viewport */
+    margin-left: 50%; /* center align for full-width block */
+    transform: translateX(-50%);
+    padding: 80px 20px; /* generous padding for breathing room */
+    text-align: center;
+    border-bottom: 1px solid #ccc; /* subtle divider */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section h1 {
+    color: #c8102e;
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-section p {
+    color: #333;
+    max-width: 800px; /* keeps text readable on wide screens */
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
