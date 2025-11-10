@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //If room available give message
-    alert('Booking request submitted for ${room} on ${date} at ${time}.');
+    alert(`Booking request submitted for ${room} on ${date} at ${time}.`);
     form.reset();
   });
 });
