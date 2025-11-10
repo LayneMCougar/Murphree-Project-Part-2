@@ -456,6 +456,30 @@ main {
 }
 
 /* ==============================
+   Facilities Section - Image Uniformity
+============================== */
+
+.facility-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.facility-item {
+    text-align: center;
+    width: 30%;
+}
+
+.facility-item img {
+    width: 100%;
+    height: 220px; /* sets consistent image height */
+    object-fit: cover; /* crops slightly while keeping proportion */
+    border-radius: 10px;
+}
+
+/* ==============================
    About Page - Community Box Styling
 ============================== */
 
