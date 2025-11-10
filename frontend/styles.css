@@ -576,3 +576,68 @@ main {
     font-size: 1.05rem;
     line-height: 1.6;
 }
+
+/*Add interactive Elements to finsish*/
+
+/* ==============================
+   Interactive Hover Effects
+============================== */
+
+/* 1. Navbar link hover */
+.nav-links a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffccd2; /* lighter red */
+}
+
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* 2. Buttons (Submit, Book Now) */
+.submit-button {
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #a30c23;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 3. Event Cards Hover */
+.event-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. General Link Hover Across Site */
+a {
+  color: #c8102e;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: #a30c23;
+  text-decoration: underline;
+}
