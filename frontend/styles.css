@@ -3,13 +3,15 @@
 ============================== */
 
 html, body {
-    height: 100%; /* make page take full viewport height */
+    height: 100%; /* ensures full viewport height */
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+    display: flex;              /* enables vertical stacking */
+    flex-direction: column;     /* allows footer to sit below main */
     background-color: #f4f4f4;
     color: #333;
 }
@@ -21,7 +23,10 @@ h1, h2, h3 {
 }
 
 main {
-    flex: 1; /* push footer down when content is short */
+    flex: 1; /* expands to push footer to bottom when content is short */
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
 }
 
 /* ==============================
@@ -36,46 +41,51 @@ header {
 
 .navbar {
     display: flex;
-    align-items: center;   /* vertically centers logo & title */
+    align-items: center;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Updated logo styling */
-.logo img {
-    height: 90px;          /* increased to match header height */
-    width: auto;           /* keeps proportional */
-    display: block;
-    margin-left: 0;        /* ensure it’s flush left */
+/* Strict left alignment for logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* ensures image stays flush left */
+    flex-shrink: 0;
 }
 
-/* Updated site title styling */
+.logo img {
+    height: 90px;
+    width: auto;
+    display: block;
+}
+
 .site-title {
-    font-size: 2rem;     /* make slightly smaller */
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     flex-grow: 1;
     margin-left: 12px;
     letter-spacing: .9px;
-    text-shadow: 3px 2px 2px rgba(0,0,0,0.3); /* subtle shadow for contrast */
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.3);
 }
 
-/* ===== Navigation Bar (wrap/spacing fix) ===== */
+/* Fix for navbar link spacing */
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-wrap: nowrap;        /* prevent items from stacking */
+    flex-wrap: nowrap;
 }
 
 .nav-links li {
     display: flex;
     align-items: center;
-    white-space: nowrap;      /* keep multi-word links on one line */
+    white-space: nowrap;
 }
 
 .nav-links a {
@@ -86,17 +96,20 @@ header {
 
 .nav-links span {
     color: white;
-    margin: 0 6px;            /* even spacing around separators */
+    margin: 0 6px;
 }
 
-/* ==============================
-   Main Layout
-============================== */
-
-main {
+/* ===== Welcome Text Section (Home Page) ===== */
+.welcome-text {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
     max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 /* ==============================
@@ -107,11 +120,41 @@ main {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 25px 30px;
+    padding: 30px 40px;
     box-shadow: 0 0 12px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
     gap: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Consistent spacing between all form fields */
+.booking-form .form-input,
+.booking-form select.form-input,
+.booking-form textarea {
+    margin-bottom: 16px;
+}
+
+/* ✅ Uniform input field styling */
+.booking-form input.form-input,
+.booking-form select.form-input,
+.booking-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fafafa;
+}
+
+.booking-form input.form-input:focus,
+.booking-form select.form-input:focus,
+.booking-form textarea:focus {
+    outline: none;
+    border-color: #c8102e;
+    background-color: #fff;
 }
 
 .booking-form label {
@@ -123,33 +166,6 @@ main {
 .required {
     color: red;
     margin-left: 3px;
-}
-
-.form-input {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    background-color: #fafafa;
-}
-
-.form-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: #c8102e;
-    background-color: #fff;
-}
-
-textarea {
-    width: 100%;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    padding: 12px;
-    resize: vertical;
-    font-family: inherit;
-    font-size: 1rem;
-    background-color: #fafafa;
 }
 
 /* ==============================
@@ -192,7 +208,7 @@ footer {
     text-align: center;
     padding: 15px 0;
     width: 100%;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* thin dark line above footer */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== FAQ Accordion ===== */
@@ -205,10 +221,10 @@ footer {
 
 .faq-item {
   background-color: #fff;
-  border: 1px solid #ddd;          /* outlined look */
+  border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 12px;
-  overflow: hidden;                 /* clip the animated area */
+  overflow: hidden;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
@@ -223,14 +239,13 @@ footer {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;   /* space for chevron */
+  justify-content: space-between;
 }
 
 .faq-question:hover {
   background: #e8e8e8;
 }
 
-/* Optional chevron indicator */
 .faq-question::after {
   content: "▾";
   transition: transform 0.2s ease;
@@ -241,15 +256,14 @@ footer {
 }
 
 .faq-answer {
-  padding: 0 16px;                  /* no top/bottom padding when closed */
-  max-height: 0;                    /* collapsed by default (JS will also use hidden) */
+  padding: 0 16px;
+  max-height: 0;
   overflow: hidden;
   transition: max-height 0.25s ease, padding 0.25s ease;
 }
 
 .faq-answer.open {
-  padding: 12px 16px;               /* add padding when opened */
-  /* Use a large max-height to allow room for content; it will animate smoothly */
+  padding: 12px 16px;
   max-height: 500px;
 }
 
@@ -259,17 +273,17 @@ footer {
 
 .hero {
     position: relative;
-    width: 100vw;                   /* full viewport width */
+    width: 100vw;
     margin-left: 50%;
-    transform: translateX(-50%);    /* ensures full edge-to-edge width */
+    transform: translateX(-50%);
     overflow: hidden;
 }
 
 .hero-media img {
-    width: 100vw;                   /* stretches image full width */
+    width: 100vw;
     height: auto;
     display: block;
-    object-fit: cover;              /* keeps proportions and prevents squishing */
+    object-fit: cover;
 }
 
 .hero-text {
@@ -287,17 +301,24 @@ footer {
 ============================== */
 
 .about-section {
-    background: linear-gradient(to right, #ffffff, #f4f4f4, #ffffff); /* soft gray gradient */
-    padding: 40px 0;
+    background-color: #ffffff;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: -30px;
+    padding: 80px 20px;
     text-align: center;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    border: 1.5px solid #b3b3b3; /* subtle dark border */
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
 .about-section h1 {
-    color: #c8102e; /* UH Red for title */
-    font-size: 2.2rem;
+    color: #c8102e;
+    font-size: 2.4rem;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -416,6 +437,9 @@ footer {
         text-align: center;
     }
 }
+
+
+
 
 
 
